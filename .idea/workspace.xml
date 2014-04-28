@@ -38,10 +38,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jobTitle.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="jobTitle.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/jobTitle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="29" selection-start="3628" selection-end="3628" vertical-scroll-proportion="0.46508172">
+            <state line="118" column="33" selection-start="3751" selection-end="3751" vertical-scroll-proportion="-16.166666">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Views/default.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="32" selection-start="592" selection-end="592" vertical-scroll-proportion="0.35661218">
               <folding />
             </state>
           </provider>
@@ -107,15 +116,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmpTitle.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/EmpTitle.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="39" selection-start="653" selection-end="653" vertical-scroll-proportion="-13.125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -128,7 +128,6 @@
       <list>
         <option value="$PROJECT_DIR$/Views/home.php" />
         <option value="$PROJECT_DIR$/ajax/dept.php" />
-        <option value="$PROJECT_DIR$/Views/default.php" />
         <option value="$PROJECT_DIR$/classes/Emp.php" />
         <option value="$PROJECT_DIR$/classes/Db.php" />
         <option value="$PROJECT_DIR$/classes/PHPExcel/Worksheet.php" />
@@ -142,6 +141,7 @@
         <option value="$PROJECT_DIR$/Views/emp.php" />
         <option value="$PROJECT_DIR$/Views/empTitle.php" />
         <option value="$PROJECT_DIR$/Views/jobTitle.php" />
+        <option value="$PROJECT_DIR$/Views/default.php" />
       </list>
     </option>
   </component>
@@ -435,13 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/default.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="22" selection-start="1613" selection-end="1613" vertical-scroll-proportion="-0.31203565">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/EmpTitle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="39" selection-start="653" selection-end="653" vertical-scroll-proportion="-13.125">
@@ -513,7 +506,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/jobTitle.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="29" selection-start="3628" selection-end="3628" vertical-scroll-proportion="0.46508172">
+        <state line="118" column="33" selection-start="3751" selection-end="3751" vertical-scroll-proportion="-16.166666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="32" selection-start="592" selection-end="592" vertical-scroll-proportion="0.35661218">
           <folding />
         </state>
       </provider>

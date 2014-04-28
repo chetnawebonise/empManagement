@@ -23,7 +23,7 @@ $content = isset($_GET['module']) ? $_GET['module'] : '';
     function callServer(options)
     {
         var opts = {
-            type: "post"
+            type: "POST"
         };
         opts = $.extend(opts, options);
         $.ajax({

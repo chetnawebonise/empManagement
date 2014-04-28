@@ -165,4 +165,10 @@ $empList = $emp->viewEmp();
         };
         callServer(options);
     }
+
+    $('#btnCancel').click(function()
+            {
+                document.getElementById("frmDeptEmp").reset();
+            }
+    );
 </script>

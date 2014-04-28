@@ -59,4 +59,10 @@ class Emp
     {
         return $this->dbConn->insert('salaries', $params);
     }
+
+    public function viewEmpExcel()
+    {
+        $query = 'CALL sp_empInfo';
+        return $this->dbConn->customQuery($query);
+    }
 }

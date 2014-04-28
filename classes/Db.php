@@ -39,7 +39,7 @@ class Db
         $values = '"' . implode('","', array_values($params)) . '"';
         $columns .= ', createdOn';
         $values .= ', NOW()';
-        echo $query = 'INSERT INTO ' . $tableName . ' (' . $columns . ') ' . ' VALUES (' . $values . ')';
+        $query = 'INSERT INTO ' . $tableName . ' (' . $columns . ') ' . ' VALUES (' . $values . ')';
         $count = $this->dbh->exec($query);
         return $this->dbh->lastInsertId();
     }

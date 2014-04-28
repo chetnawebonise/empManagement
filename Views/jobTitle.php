@@ -127,4 +127,10 @@ function onCLickDeleteJobTitle()
     };
     callServer(options);
 }
+
+$('#btnCancel').click(function()
+        {
+            document.getElementById("frmJobTitle").reset();
+        }
+);
 </script>

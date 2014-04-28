@@ -75,7 +75,7 @@ $empList = $emp->viewEmp();
                     </td>
                 </tr>
                 <tr>
-                    <td>Job Title:</td>
+                    <td>Salary:</td>
                     <td><input type="text" id="txtSalary" name="txtSalary" value=""></td>
                 </tr>
                 <tr>
@@ -165,4 +165,10 @@ $empList = $emp->viewEmp();
         };
         callServer(options);
     }
+
+    $('#btnCancel').click(function()
+            {
+                document.getElementById("frmSalary").reset();
+            }
+    );
 </script>

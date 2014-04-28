@@ -221,16 +221,10 @@ function onCLickDeleteEmp()
     };
     callServer(options);
 }
+
+$('#btnCancel').click(function()
+        {
+            document.getElementById("frmEmp").reset();
+        }
+);
 </script>
-
-
-CREATE VIEW view_empInfo
-AS
-SELECT e.id AS empId, em.empName, s.salary, de2.deptName, t.title, e.hireDate, e.gender, e.dob, jt4.title AS lastTitle, jt4.fromDate, jt4.toDate, s5.salary AS lastSal, ((s5.salary/s6.salary) * 100) AS salPercentage
-FROM employees AS e LEFT JOIN employees AS em ON e.id = em.managerId
-LEFT JOIN salaries AS s ON e.id = s.empId
-LEFT JOIN (SELECT d.deptName, de.* FROM departments AS d LEFT JOIN department_employees AS de ON d.id = de.departmentId) AS de2 ON e.id = de2.empId
-LEFT JOIN (SELECT et.*, jt.title FROM employees_titles AS et LEFT JOIN job_titles AS jt ON et.jobTitleId = jt.id HAVING CURDATE() BETWEEN et.fromDate AND et.toDate) AS t ON e.id = t.empId
-LEFT JOIN (SELECT jt3.`title`, et3.`empId`, et3.`fromDate`, et3.`toDate` FROM `employees_titles` AS et3 LEFT JOIN `job_titles` AS jt3 ON et3.`jobTitleId` = jt3.`id` WHERE jt3.id = (SELECT jobTitleId FROM employees_titles AS et2 WHERE et2.fromDate < (SELECT MAX(fromdate) FROM employees_titles) LIMIT 1)) AS jt4 ON e.`id` = jt4.empId
-LEFT JOIN (SELECT * FROM salaries ORDER BY salary DESC LIMIT 1 , 1) AS s5 ON e.`id` = s5.empId
-LEFT JOIN (SELECT * FROM salaries ORDER BY salary DESC LIMIT 1) AS s6 ON s5.id = s6.id

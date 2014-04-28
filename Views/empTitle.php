@@ -180,4 +180,10 @@ $empList = $emp->viewEmp();
         };
         callServer(options);
     }
+
+    $('#btnCancel').click(function()
+            {
+                document.getElementById("frmEmpTitle").reset();
+            }
+    );
 </script>

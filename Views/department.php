@@ -127,4 +127,10 @@ function onCLickDeleteDept()
     };
     callServer(options);
 }
+
+$('#btnCancel').click(function()
+        {
+            document.getElementById("frmDept").reset();
+        }
+);
 </script>

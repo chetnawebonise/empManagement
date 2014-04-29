@@ -13,4 +13,4 @@ function __autoload($class_name) {
 $id = $_REQUEST['deptId'];
 $dbConn = new Db();
 $deptCls = new Dept($dbConn);
-echo $deptCls->deleteDept($id);
+echo $deptCls->deleteDept(array('id' => $id));

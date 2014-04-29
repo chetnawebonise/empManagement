@@ -89,7 +89,7 @@ $result = $deptCls->viewDept();
                     </script>
                     <tr>
                         <td><?php echo $index;?></td>
-                        <td><?php echo $row['deptName'];?></td>
+                        <td><?php echo utf8toHtml($row['deptName']);?></td>
                         <td><a href="#" class="editDept" data-deptId="<?php echo $row['id'];?>">Edit</a> | <a href="#" class="deleteDept" data-deptId="<?php echo $row['id'];?>">Delete</a></td>
                     </tr>
             <?php
@@ -120,9 +120,10 @@ function onCLickDeleteDept()
     var options = {
         url : 'ajax/dept.php',
         data : {deptId: deptId},
+        dataType:"json",
         success :function(response)
         {
-            console.log(response);
+            window.location.href = 'index.php?module=department';
         }
     };
     callServer(options);

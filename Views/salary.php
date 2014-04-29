@@ -67,7 +67,7 @@ $empList = $emp->viewEmp();
                             foreach($empList as $row)
                             {
                                 ?>
-                                <option value="<?php echo $row['id'];?>"><?php echo $row['empName'];?></option>
+                                <option value="<?php echo $row['id'];?>"><?php echo utf8toHtml($row['empName']);?></option>
                                 <?php
                             }
                             ?>
@@ -120,8 +120,8 @@ $empList = $emp->viewEmp();
                 </script>
                 <tr>
                     <td><?php echo $index;?></td>
-                    <td><?php echo $row['empName'];?></td>
-                    <td><?php echo $row['salary'];?></td>
+                    <td><?php echo utf8toHtml($row['empName']);?></td>
+                    <td><?php echo utf8toHtml($row['salary']);?></td>
                     <td><a href="#" class="editSalary" data-deptId="<?php echo $row['id'];?>">Edit</a> | <a href="#" class="deleteSalary" data-deptId="<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
                 <?php
@@ -156,11 +156,11 @@ $empList = $emp->viewEmp();
     {
         var id = $(this).data('deptid');
         var options = {
-            url : 'ajax/deptEmp.php',
+            url : 'ajax/salary.php',
             data : {id: id},
             success :function(response)
             {
-                console.log(response);
+                window.location.href = 'index.php?module=empSal';
             }
         };
         callServer(options);

@@ -70,7 +70,7 @@ $empList = $emp->viewEmp();
                             foreach($empList as $row)
                             {
                                 ?>
-                                <option value="<?php echo $row['id'];?>"><?php echo $row['empName'];?></option>
+                                <option value="<?php echo $row['id'];?>"><?php echo utf8toHtml($row['empName']);?></option>
                                 <?php
                             }
                             ?>
@@ -86,7 +86,7 @@ $empList = $emp->viewEmp();
                             foreach($titleList as $row)
                             {
                             ?>
-                                <option value="<?php echo $row['id'];?>"><?php echo $row['title'];?></option>
+                                <option value="<?php echo $row['id'];?>"><?php echo utf8toHtml($row['title']);?></option>
                             <?php
                             }
                             ?>
@@ -135,8 +135,8 @@ $empList = $emp->viewEmp();
                 </script>
                 <tr>
                     <td><?php echo $index;?></td>
-                    <td><?php echo $row['empName'];?></td>
-                    <td><?php echo $row['title'];?></td>
+                    <td><?php echo utf8toHtml($row['empName']);?></td>
+                    <td><?php echo utf8toHtml($row['title']);?></td>
                     <td><a href="#" class="editEmpTitle" data-deptId="<?php echo $row['id'];?>">Edit</a> | <a href="#" class="deleteEmpTitle" data-deptId="<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
                 <?php
@@ -171,11 +171,11 @@ $empList = $emp->viewEmp();
     {
         var id = $(this).data('deptid');
         var options = {
-            url : 'ajax/deptEmp.php',
+            url : 'ajax/EmpTitle.php',
             data : {id: id},
             success :function(response)
             {
-                console.log(response);
+                window.location.href = 'index.php?module=empTitle';
             }
         };
         callServer(options);

@@ -119,7 +119,7 @@ if(isset($_POST) && $_POST)
                                 foreach($result as $row)
                                 {
                                 ?>
-                                    <option value="<?php echo $row['id'];?>"><?php echo $row['empName'];?></option>
+                                    <option value="<?php echo $row['id'];?>"><?php echo utf8toHtml($row['empName']);?></option>
                                 <?php
                                 }
                                 ?>
@@ -174,8 +174,10 @@ if(isset($_POST) && $_POST)
                     </script>
                     <tr>
                         <td><?php echo $index;?></td>
-                        <td><?php echo $empRow['empName'];?></td>
-                        <td><a href="#" class="editEmp" data-empId="<?php echo $empRow['id'];?>">Edit</a> | <a href="#" class="deleteEmp" data-empId="<?php echo $empRow['id'];?>">Delete</a></td>
+                        <td><?php echo utf8toHtml($empRow['empName']);?></td>
+                        <td><a href="#" class="editEmp" data-empId="<?php echo $empRow['id'];?>">Edit</a>
+                            | <a href="#" class="deleteEmp" data-empId="<?php echo $empRow['id'];?>">Delete</a>
+                        </td>
                     </tr>
             <?php
                     $index++;
@@ -216,7 +218,7 @@ function onCLickDeleteEmp()
         data : {id: id},
         success :function(response)
         {
-            console.log(response);
+            window.location.href = 'index.php?module=employee';
         }
     };
     callServer(options);

@@ -12,5 +12,5 @@ function __autoload($class_name) {
 
 $id = $_REQUEST['id'];
 $dbConn = new Db();
-$jobTitleCls = new JobTitle($dbConn);
-echo $jobTitleCls->deleteJobTitle(array('id' => $id));
+$empTitleCls = new EmpTitle($dbConn);
+echo $empTitleCls->deleteEmpTitle(array('id' => $id));

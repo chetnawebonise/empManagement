@@ -8,6 +8,11 @@
  */
 
 $content = isset($_GET['module']) ? $_GET['module'] : '';
+
+    function utf8toHtml($str)
+    {
+        return htmlentities($str, ENT_QUOTES, "UTF-8");
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +36,7 @@ $content = isset($_GET['module']) ? $_GET['module'] : '';
             url : opts['url'],
             dataType: "json",
             data:opts['data'],
-            contentType: "application/json; charset=utf-8",
+            //contentType: "application/json; charset=utf-8",
             success: opts.success
         });
     }

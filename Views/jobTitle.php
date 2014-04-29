@@ -47,7 +47,7 @@ $result = $jobTitleCls->viewJobTitle();
                     {
                     ?>
                         <tr>
-                            <td colspan="2"><?php echo $count;?> affected</td>
+                            <td colspan="2">1 row affected</td>
                         </tr>
                     <?php
                     }
@@ -89,7 +89,7 @@ $result = $jobTitleCls->viewJobTitle();
                     </script>
                     <tr>
                         <td><?php echo $index;?></td>
-                        <td><?php echo $row['title'];?></td>
+                        <td><?php echo utf8toHtml($row['title']);?></td>
                         <td><a href="#" class="editJobTitle" data-jobTitleId="<?php echo $row['id'];?>">Edit</a> | <a href="#" class="deleteJobTitle" data-jobTitleId="<?php echo $row['id'];?>">Delete</a></td>
                     </tr>
             <?php
@@ -122,7 +122,7 @@ function onCLickDeleteJobTitle()
         data : {id: id},
         success :function(response)
         {
-            console.log(response);
+            window.location.href = 'index.php?module=jobTitle';
         }
     };
     callServer(options);

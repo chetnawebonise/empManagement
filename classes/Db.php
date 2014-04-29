@@ -62,8 +62,10 @@ class Db
     public function deleteQuery($tableName, $where)
     {
         $query = 'DELETE FROM ' . $tableName;
-        $clause = implode(',', array_keys($where)) . '"' . implode('","', array_values($where)) . '"';
-        echo $query .= ' where ' . $clause;
+        $clause = implode(',', array_keys($where)) . ' = "' . implode('","', array_values($where)) . '"';
+        $query .= ' where ' . $clause;
+
+        return $this->dbh->exec($query);
     }
 
     public function customQuery($query)

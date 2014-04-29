@@ -68,7 +68,7 @@ $empList = $emp->viewEmp();
                             foreach($deptList as $row)
                             {
                             ?>
-                                <option value="<?php echo $row['id'];?>"><?php echo $row['deptName'];?></option>
+                                <option value="<?php echo $row['id'];?>"><?php echo utf8toHtml($row['deptName']);?></option>
                             <?php
                             }
                             ?>
@@ -84,7 +84,7 @@ $empList = $emp->viewEmp();
                             foreach($empList as $row)
                             {
                             ?>
-                                <option value="<?php echo $row['id'];?>"><?php echo $row['empName'];?></option>
+                                <option value="<?php echo $row['id'];?>"><?php echo utf8toHtml($row['empName']);?></option>
                             <?php
                             }
                             ?>
@@ -125,9 +125,11 @@ $empList = $emp->viewEmp();
                 </script>
                 <tr>
                     <td><?php echo $index;?></td>
-                    <td><?php echo $row['deptName'];?></td>
-                    <td><?php echo $row['empName'];?></td>
-                    <td><a href="#" class="editDeptEmp" data-deptId="<?php echo $row['id'];?>">Edit</a> | <a href="#" class="deleteDeptEmp" data-deptId="<?php echo $row['id'];?>">Delete</a></td>
+                    <td><?php echo utf8toHtml($row['deptName']);?></td>
+                    <td><?php echo utf8toHtml($row['empName']);?></td>
+                    <td><a href="#" class="editDeptEmp" data-deptEmpId="<?php echo $row['id'];?>">Edit</a>
+                        | <a href="#" class="deleteDeptEmp" data-deptEmpId="<?php echo $row['id'];?>">Delete</a>
+                    </td>
                 </tr>
                 <?php
                 $index++;
@@ -143,10 +145,10 @@ $empList = $emp->viewEmp();
     $('.editDeptEmp').click(onCLickEditDeptEmp);
     function onCLickEditDeptEmp()
     {
-        var id = $(this).data('deptid');
-        var dept = resultSet[id];
-        $('#slctDept').val(dept['deptId']);
-        $('#slctEmp').val(dept['empId']);
+        var id = $(this).data('deptempid');
+        var deptEmp = resultSet[id];
+        $('#slctDept').val(deptEmp['deptId']);
+        $('#slctEmp').val(deptEmp['empId']);
         $('#hdnDeptEmp').val(id);
         $('#action').val('edit');
     }
@@ -154,13 +156,13 @@ $empList = $emp->viewEmp();
     $('.deleteDeptEmp').click(onCLickDeleteDeptEmp);
     function onCLickDeleteDeptEmp()
     {
-        var id = $(this).data('deptid');
+        var id = $(this).data('deptempid');
         var options = {
             url : 'ajax/deptEmp.php',
             data : {id: id},
             success :function(response)
             {
-                console.log(response);
+                window.location.href = 'index.php?module=deptEmployee';
             }
         };
         callServer(options);

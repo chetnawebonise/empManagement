@@ -68,7 +68,7 @@ $empList = $emp->viewEmpManager();
                             foreach($deptList as $row)
                             {
                             ?>
-                                <option value="<?php echo $row['id'];?>"><?php echo $row['deptName'];?></option>
+                                <option value="<?php echo $row['id'];?>"><?php echo utf8toHtml($row['deptName']);?></option>
                             <?php
                             }
                             ?>
@@ -84,7 +84,7 @@ $empList = $emp->viewEmpManager();
                             foreach($empList as $row)
                             {
                             ?>
-                                <option value="<?php echo $row['id'];?>"><?php echo $row['empName'];?></option>
+                                <option value="<?php echo $row['id'];?>"><?php echo utf8toHtml($row['empName']);?></option>
                             <?php
                             }
                             ?>
@@ -125,8 +125,8 @@ $empList = $emp->viewEmpManager();
                 </script>
                 <tr>
                     <td><?php echo $index;?></td>
-                    <td><?php echo $row['deptName'];?></td>
-                    <td><?php echo $row['empName'];?></td>
+                    <td><?php echo utf8toHtml($row['deptName']);?></td>
+                    <td><?php echo utf8toHtml($row['empName']);?></td>
                     <td><a href="#" class="editDeptManager" data-deptId="<?php echo $row['id'];?>">Edit</a> | <a href="#" class="deleteDeptManager" data-deptId="<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
                 <?php
@@ -156,11 +156,11 @@ $empList = $emp->viewEmpManager();
     {
         var id = $(this).data('deptid');
         var options = {
-            url : 'ajax/deptEmp.php',
+            url : 'ajax/deptManager.php',
             data : {id: id},
             success :function(response)
             {
-                console.log(response);
+                window.location.href = 'index.php?module=deptManager';
             }
         };
         callServer(options);

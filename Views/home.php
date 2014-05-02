@@ -8,4 +8,4 @@
  */
 ?>
 
-<div style="text-align: center; color: teal;">Welcome!!!</div>
+<div style="text-align: center; color: #827e20;"><h4>Welcome!!!</h4></div>

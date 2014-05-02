@@ -44,16 +44,16 @@ $empList = $emp->viewEmp();
     <tr>
         <td>
             <form action="#" id="frmSalary" name="frmSalary" method="post">
-                <table width="100%"" style="padding-bottom:50px;">
+                <table width="100%" class="table-condensed">
                 <tr>
-                    <td colspan="2">ADD Employee Salaries</td>
+                    <td colspan="2"><h6>ADD Employee Salaries</h6></td>
                 </tr>
                 <?php
                 if($count)
                 {
                     ?>
                     <tr>
-                        <td colspan="2">1 row affected</td>
+                        <td colspan="2" class="text-success">1 row affected</td>
                     </tr>
                     <?php
                 }
@@ -61,7 +61,7 @@ $empList = $emp->viewEmp();
                 <tr>
                     <td>Employee:</td>
                     <td>
-                        <select id="slctEmp" name="slctEmp">
+                        <select id="slctEmp" name="slctEmp" class="dropdown">
                             <option value="">--Select Employee--</option>
                             <?php
                             foreach($empList as $row)
@@ -76,22 +76,23 @@ $empList = $emp->viewEmp();
                 </tr>
                 <tr>
                     <td>Salary:</td>
-                    <td><input type="text" id="txtSalary" name="txtSalary" value=""></td>
+                    <td><input type="text" id="txtSalary" name="txtSalary" value="" class="input-large"></td>
                 </tr>
                 <tr>
                     <td>From:</td>
-                    <td><input type="text" value="" id="txtFrom" name="txtFrom" maxlength="10"></td>
+                    <td><input type="text" value="" id="txtFrom" name="txtFrom" maxlength="10" class="input-large"></td>
                 </tr>
                 <tr>
                     <td>To:</td>
-                    <td><input type="text" value="" id="txtTo" name="txtTo" maxlength="10"></td>
+                    <td><input type="text" value="" id="txtTo" name="txtTo" maxlength="10" class="input-large"></td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td></td>
+                    <td>
                         <input type="hidden" value="" id="hdnSalary" name="hdnSalary" maxlength="100">
                         <input type="hidden" value="add" id="action" name="action" maxlength="100">
-                        <input type="submit" value="Save" id="btnSubmit">&nbsp;&nbsp;
-                        <input type="button" value="Cancel" id="btnCancel">
+                        <input type="submit" value="Save" id="btnSubmit" class="btn btn-primary">&nbsp;&nbsp;
+                        <input type="reset" value="Cancel" id="btnCancel" class="btn">
                     </td>
                 </tr>
                 <tr height="50px">
@@ -103,12 +104,12 @@ $empList = $emp->viewEmp();
 </tr>
 <tr>
     <td>
-        <table width="100%" cellpadding="1" cellspacing="2" border="1">
+        <table width="100%" class="table-hover table">
             <thead>
-            <td>Sr. No.</td>
-            <td>Employee</td>
-            <td>Salary</td>
-            <td>Actions</td>
+            <th>Sr. No.</th>
+            <th>Employee</th>
+            <th>Salary</th>
+            <th>Actions</th>
             </thead>
             <?php
             $index = 1;

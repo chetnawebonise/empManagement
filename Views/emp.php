@@ -89,31 +89,28 @@ if(isset($_POST) && $_POST)
     <tr>
         <td>
             <form action="#" id="frmEmp" name="frmEmp" method="post">
-                <table width="100%"" style="padding-bottom:50px;">
-                    <tr>
-                        <td colspan="2" style="font-weight: bold;">ADD Employee</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="font-weight: bold;">&nbsp;</td>
-                    </tr>
+                <table width="100%" class="table-condensed">
+                    <thead>
+                        <td colspan="2"><h6>ADD Employee</h6></td>
+                    </thead>
                     <?php
                     if($count)
                     {
                     ?>
                         <tr>
-                            <td colspan="2"><?php echo $count;?> affected</td>
+                            <td colspan="2"  class="text-success"><?php echo $count;?> affected</td>
                         </tr>
                     <?php
                     }
                     ?>
                     <tr>
                         <td>Name:</td>
-                        <td><input type="text" value="" id="txtName" name="txtName" maxlength="100"></td>
+                        <td><input type="text" value="" id="txtName" name="txtName" maxlength="100" class="input-large"></td>
                     </tr>
                     <tr>
                         <td>Manager:</td>
                         <td>
-                            <select id="slctEmpManager" name="slctEmpManager">
+                            <select id="slctEmpManager" name="slctEmpManager" class="dropdown">
                                 <option value="">--Select--</option>
                                 <?php
                                 foreach($result as $row)
@@ -128,25 +125,26 @@ if(isset($_POST) && $_POST)
                     </tr>
                     <tr>
                         <td>Dob:</td>
-                        <td><input type="text" value="" id="txtDob" name="txtDob" maxlength="10"></td>
+                        <td><input type="text" value="" id="txtDob" name="txtDob" maxlength="10" class="input-large"></td>
                     </tr>
                     <tr>
                         <td>Gender:</td>
                         <td>
-                            <input type="radio" value="M" id="rdMale" name="rdGender" maxlength="10" class="rdGender"> Male
-                            <input type="radio" value="F" id="rdFemale" name="rdGender" maxlength="10" class="rdGender"> Female
+                            <input type="radio" value="M" id="rdMale" name="rdGender" maxlength="10" class="rdGender radio"> Male
+                            <input type="radio" value="F" id="rdFemale" name="rdGender" maxlength="10" class="rdGender radio"> Female
                         </td>
                     </tr>
                     <tr>
                         <td>Hire Date:</td>
-                        <td><input type="text" value="" id="txtHireDate" name="txtHireDate" maxlength="10"></td>
+                        <td><input type="text" value="" id="txtHireDate" name="txtHireDate" maxlength="10" class="input-large"></td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td></td>
+                        <td>
                             <input type="hidden" value="" id="hdnEmp" name="hdnEmp" maxlength="100">
                             <input type="hidden" value="add" id="action" name="action" maxlength="100">
-                            <input type="submit" value="Save" id="btnSubmit">&nbsp;&nbsp;
-                            <input type="button" value="Cancel" id="btnCancel">
+                            <input type="submit" value="Save" id="btnSubmit" class="btn btn-primary">&nbsp;&nbsp;
+                            <input type="reset" value="Cancel" id="btnCancel" class="btn">
                         </td>
                     </tr>
                     <tr height="50px">
@@ -158,11 +156,11 @@ if(isset($_POST) && $_POST)
     </tr>
     <tr>
         <td>
-            <table width="100%" cellpadding="0" cellspacing="0" border="1">
+            <table width="100%" class="table-hover table">
                 <thead>
-                    <td>Sr. No.</td>
-                    <td>Name</td>
-                    <td>Actions</td>
+                    <th>Sr. No.</th>
+                    <th>Name</th>
+                    <th>Actions</th>
                 </thead>
             <?php
                 $index = 1;

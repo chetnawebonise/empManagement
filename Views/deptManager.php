@@ -45,16 +45,16 @@ $empList = $emp->viewEmpManager();
     <tr>
         <td>
             <form action="#" id="frmDeptManager" name="frmDeptManager" method="post">
-                <table width="100%"" style="padding-bottom:50px;">
-                <tr>
-                    <td colspan="2">ADD Department Manager</td>
-                </tr>
+                <table width="100%" class="table-condensed">
+                <thead>
+                    <td colspan="2"><h6>ADD Department Manager</h6></td>
+                </thead>
                 <?php
                 if($count)
                 {
                     ?>
                     <tr>
-                        <td colspan="2">1 row affected</td>
+                        <td colspan="2" class="text-success">1 row affected</td>
                     </tr>
                     <?php
                 }
@@ -62,7 +62,7 @@ $empList = $emp->viewEmpManager();
                 <tr>
                     <td>Department:</td>
                     <td>
-                        <select id="slctDept" name="slctDept">
+                        <select id="slctDept" name="slctDept" class="dropdown">
                             <option value="">--Select Department--</option>
                             <?php
                             foreach($deptList as $row)
@@ -78,7 +78,7 @@ $empList = $emp->viewEmpManager();
                 <tr>
                     <td>Manager:</td>
                     <td>
-                        <select id="slctEmp" name="slctEmp">
+                        <select id="slctEmp" name="slctEmp" class="dropdown">
                             <option value="">--Select Manager--</option>
                             <?php
                             foreach($empList as $row)
@@ -92,11 +92,12 @@ $empList = $emp->viewEmpManager();
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td></td>
+                    <td>
                         <input type="hidden" value="" id="hdnDeptManager" name="hdnDeptManager" maxlength="100">
                         <input type="hidden" value="add" id="action" name="action" maxlength="100">
-                        <input type="submit" value="Save" id="btnSubmit">&nbsp;&nbsp;
-                        <input type="button" value="Cancel" id="btnCancel">
+                        <input type="submit" value="Save" id="btnSubmit" class="btn btn-primary">&nbsp;&nbsp;
+                        <input type="reset" value="Cancel" id="btnCancel" class="btn">
                     </td>
                 </tr>
                 <tr height="50px">
@@ -108,12 +109,12 @@ $empList = $emp->viewEmpManager();
 </tr>
 <tr>
     <td>
-        <table width="100%" cellpadding="1" cellspacing="2" border="1">
+        <table width="100%" class="table-hover table">
             <thead>
-            <td>Sr. No.</td>
-            <td>Department</td>
-            <td>Manager</td>
-            <td>Actions</td>
+                <th>Sr. No.</th>
+                <th>Department</th>
+                <th>Manager</th>
+                <th>Actions</th>
             </thead>
             <?php
             $index = 1;

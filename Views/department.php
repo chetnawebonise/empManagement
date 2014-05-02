@@ -38,30 +38,31 @@ $result = $deptCls->viewDept();
     <tr>
         <td>
             <form action="#" id="frmDept" name="frmDept" method="post">
-                <table width="100%"" style="padding-bottom:50px;">
-                    <tr>
-                        <td colspan="2">ADD Department</td>
-                    </tr>
+                <table width="100%"" class="table-condensed">
+                    <thead>
+                        <td colspan="2"><h6>ADD Department</h6></td>
+                    </thead>
                     <?php
                     if($count)
                     {
                     ?>
                         <tr>
-                            <td colspan="2"><?php echo $count;?> affected</td>
+                            <td colspan="2" class="text-success"><?php echo $count;?> affected</td>
                         </tr>
                     <?php
                     }
                     ?>
                     <tr>
                         <td>Name:</td>
-                        <td><input type="text" value="" id="txtDept" name="txtDept" maxlength="100"></td>
+                        <td><input type="text" value="" id="txtDept" name="txtDept" maxlength="100" class="input-large"></td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td></td>
+                        <td>
                             <input type="hidden" value="" id="hdnDept" name="hdnDept" maxlength="100">
                             <input type="hidden" value="add" id="action" name="action" maxlength="100">
-                            <input type="submit" value="Save" id="btnSubmit">&nbsp;&nbsp;
-                            <input type="button" value="Cancel" id="btnCancel">
+                            <input type="submit" value="Save" id="btnSubmit" class="btn btn-primary">&nbsp;&nbsp;
+                            <input type="reset" value="Cancel" id="btnCancel" class="btn">
                         </td>
                     </tr>
                     <tr height="50px">
@@ -73,11 +74,11 @@ $result = $deptCls->viewDept();
     </tr>
     <tr>
         <td>
-            <table width="100%" cellpadding="0" cellspacing="0" border="1">
+            <table width="100%" class="table-hover table">
                 <thead>
-                    <td>Sr. No.</td>
+                    <td width="10%">Sr. No.</td>
                     <td>Name</td>
-                    <td>Actions</td>
+                    <td width="15%">Actions</td>
                 </thead>
             <?php
                 $index = 1;

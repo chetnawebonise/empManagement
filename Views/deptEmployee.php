@@ -45,16 +45,16 @@ $empList = $emp->viewEmp();
     <tr>
         <td>
             <form action="#" id="frmDeptEmp" name="frmDeptEmp" method="post">
-                <table width="100%"" style="padding-bottom:50px;">
-                <tr>
-                    <td colspan="2">ADD Department Employee</td>
-                </tr>
+                <table width="100%" class="table-condensed">
+                <thead>
+                    <td colspan="2"><h6>ADD Department Employee</h6></td>
+                </thead>
                 <?php
                 if($count)
                 {
                     ?>
                     <tr>
-                        <td colspan="2">1 row affected</td>
+                        <td colspan="2" class="text-success">1 row affected</td>
                     </tr>
                     <?php
                 }
@@ -62,7 +62,7 @@ $empList = $emp->viewEmp();
                 <tr>
                     <td>Department:</td>
                     <td>
-                        <select id="slctDept" name="slctDept">
+                        <select id="slctDept" name="slctDept" class="dropdown">
                             <option value="">--Select Department--</option>
                             <?php
                             foreach($deptList as $row)
@@ -78,7 +78,7 @@ $empList = $emp->viewEmp();
                 <tr>
                     <td>Employee:</td>
                     <td>
-                        <select id="slctEmp" name="slctEmp">
+                        <select id="slctEmp" name="slctEmp" class="dropdown">
                             <option value="">--Select Employee--</option>
                             <?php
                             foreach($empList as $row)
@@ -92,52 +92,53 @@ $empList = $emp->viewEmp();
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td></td>
+                    <td>
                         <input type="hidden" value="" id="hdnDeptEmp" name="hdnDeptEmp" maxlength="100">
                         <input type="hidden" value="add" id="action" name="action" maxlength="100">
-                        <input type="submit" value="Save" id="btnSubmit">&nbsp;&nbsp;
-                        <input type="button" value="Cancel" id="btnCancel">
+                        <input type="submit" value="Save" id="btnSubmit" class="btn btn-primary">&nbsp;&nbsp;
+                        <input type="reset" value="Cancel" id="btnCancel" class="btn">
                     </td>
                 </tr>
                 <tr height="50px">
                     <td colspan="2"><hr></td>
                 </tr>
-</table>
-</form>
-</td>
-</tr>
-<tr>
-    <td>
-        <table width="100%" cellpadding="1" cellspacing="2" border="1">
-            <thead>
-            <td>Sr. No.</td>
-            <td>Department</td>
-            <td>Employee</td>
-            <td>Actions</td>
-            </thead>
-            <?php
-            $index = 1;
-            foreach ($result as $row)
-            {
-                ?>
-                <script type="text/javascript">
-                    resultSet['<?php echo $row['id'];?>'] = <?php echo json_encode($row);?>;
-                </script>
-                <tr>
-                    <td><?php echo $index;?></td>
-                    <td><?php echo utf8toHtml($row['deptName']);?></td>
-                    <td><?php echo utf8toHtml($row['empName']);?></td>
-                    <td><a href="#" class="editDeptEmp" data-deptEmpId="<?php echo $row['id'];?>">Edit</a>
-                        | <a href="#" class="deleteDeptEmp" data-deptEmpId="<?php echo $row['id'];?>">Delete</a>
-                    </td>
-                </tr>
+            </table>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table width="100%" class="table-hover table">
+                <thead>
+                    <th>Sr. No.</th>
+                    <th>Department</th>
+                    <th>Employee</th>
+                    <th>Actions</th>
+                </thead>
                 <?php
-                $index++;
-            }
-            ?>
-        </table>
-    </td>
-</tr>
+                $index = 1;
+                foreach ($result as $row)
+                {
+                    ?>
+                    <script type="text/javascript">
+                        resultSet['<?php echo $row['id'];?>'] = <?php echo json_encode($row);?>;
+                    </script>
+                    <tr>
+                        <td><?php echo $index;?></td>
+                        <td><?php echo utf8toHtml($row['deptName']);?></td>
+                        <td><?php echo utf8toHtml($row['empName']);?></td>
+                        <td><a href="#" class="editDeptEmp" data-deptEmpId="<?php echo $row['id'];?>">Edit</a>
+                            | <a href="#" class="deleteDeptEmp" data-deptEmpId="<?php echo $row['id'];?>">Delete</a>
+                        </td>
+                    </tr>
+                    <?php
+                    $index++;
+                }
+                ?>
+            </table>
+        </td>
+    </tr>
 </table>
 
 <script type="text/javascript">

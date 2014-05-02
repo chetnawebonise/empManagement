@@ -38,30 +38,31 @@ $result = $jobTitleCls->viewJobTitle();
     <tr>
         <td>
             <form action="#" id="frmJobTitle" name="frmJobTitle" method="post">
-                <table width="100%"" style="padding-bottom:50px;">
-                    <tr>
-                        <td colspan="2">ADD Job Title</td>
-                    </tr>
+                <table width="100%" class="table-condensed">
+                    <thead>
+                        <td colspan="2"><h6>ADD Job Title</h6></td>
+                    </thead>
                     <?php
                     if($count)
                     {
                     ?>
                         <tr>
-                            <td colspan="2">1 row affected</td>
+                            <td colspan="2" class="text-success">1 row affected</td>
                         </tr>
                     <?php
                     }
                     ?>
                     <tr>
                         <td>Title:</td>
-                        <td><input type="text" value="" id="txtJobTitle" name="txtJobTitle" maxlength="100"></td>
+                        <td><input type="text" value="" id="txtJobTitle" name="txtJobTitle" maxlength="100" class="input-large"></td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td></td>
+                        <td>
                             <input type="hidden" value="" id="hdnJobTitle" name="hdnJobTitle" maxlength="100">
                             <input type="hidden" value="add" id="action" name="action" maxlength="100">
-                            <input type="submit" value="Save" id="btnSubmit">&nbsp;&nbsp;
-                            <input type="button" value="Cancel" id="btnCancel">
+                            <input type="submit" value="Save" id="btnSubmit" class="btn btn-primary">&nbsp;&nbsp;
+                            <input type="reset" value="Cancel" id="btnCancel" class="btn">
                         </td>
                     </tr>
                     <tr height="50px">
@@ -73,11 +74,11 @@ $result = $jobTitleCls->viewJobTitle();
     </tr>
     <tr>
         <td>
-            <table width="100%" cellpadding="0" cellspacing="0" border="1">
+            <table width="100%" class="table-hover table">
                 <thead>
-                    <td>Sr. No.</td>
-                    <td>Name</td>
-                    <td>Actions</td>
+                    <th>Sr. No.</th>
+                    <th>Name</th>
+                    <th>Actions</th>
                 </thead>
             <?php
                 $index = 1;
